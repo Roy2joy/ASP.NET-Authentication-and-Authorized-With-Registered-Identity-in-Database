@@ -1,0 +1,32 @@
+Purpose: to make (identity as a service)-(with google and okta,u can also add other services such as facebook auth and microsoft auth)
+
+-----------------------------------------------------------------------------Initial Project:-
+This project is downloaded from github made by Microsoft Team (Tony Spencer). 
+There is a 3 youtube video on these authentication services
+youtube Link: https://www.youtube.com/watch?v=BWa7Mu-oMHk
+Github Link:  https://github.com/mobiletonster/Authn
+
+All configuration in code of asp.net core code is done
+Only you have to make (google dev account for google and register app to make use of google auth service(watch video 2)) and register for okta(watch video 3) and configure both of them
+and get credentials(that are instructed in video) . And store them in app.settings.json(so in future when you upload remove that app.setting from git).
+
+
+-----------------------------------------------------------------------------Changes:-
+
+----------------------------------First Change:-
+
+I have to add (links and credentials) for that i have add all that credentials and links in appseeting.development.json and change (their references in startup.cs).
+
+----------------------------------Second Change:-
+Previously,SQLite is used to store data of user.
+I have to change it to localDatabase(in future i m goin to connect other databases(such as MySql/oracle/PostgreSQL))  for that I have done several changes.
+To change for localDatabase following steps are taken:
+-first i have to add packages of entity framework 6.(something version)
+-Add DBClass (and inside that add getter and setter for AddUser).
+-Since dependancy injection is applied to use this service in main solution ,so in main solution i have to add services(inject) of DBClass(this service is added in startup.cs under 
+configure services section.) 
+
+
+----------------------------------Future Changes
+Data solution is extra so i am goin to remove it and adjust its AppUsers.cs since it is used by database. 
+ 

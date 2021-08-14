@@ -1,4 +1,5 @@
 ﻿using Authn.Data;
+using Authn.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace Authn.Services
 {
     public class UserService
     {
-        private readonly AuthDbContext _context;
-        public UserService(AuthDbContext context)
+        private readonly DBClass _context;
+        public UserService(DBClass context)
         {
             _context = context;
         }
@@ -81,7 +82,7 @@ namespace Authn.Services
             appUser.Roles = "NewUser";
             var entity = _context.AppUsers.Add(appUser);
             _context.SaveChanges();
-            return entity.Entity;
+            return appUser; //change here
          }
     }
 
