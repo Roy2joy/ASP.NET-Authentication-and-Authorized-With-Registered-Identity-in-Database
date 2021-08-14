@@ -3,6 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#Adding appsetting.development file(which contains credentials but it is not included in .git)
+appsettings.*.json
+
+
 # User-specific files
 *.rsuser
 *.suo
