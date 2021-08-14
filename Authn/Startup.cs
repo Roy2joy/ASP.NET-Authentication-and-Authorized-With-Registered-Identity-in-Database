@@ -1,4 +1,4 @@
-using Authn.Data;
+//using Authn.Data;
 using Authn.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
@@ -28,8 +28,8 @@ namespace Authn
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //services.AddDbContext<AuthDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<UserService>();
+            services.AddScoped<AppUser>();  //(dep injection)--this service is added to get access to AppUser(model to store data for User)
+            services.AddScoped<UserService>();//((dep injection)--this is used to add service)
             services.AddScoped<Database.DBClass>();
             services.AddAuthentication(options =>
             {

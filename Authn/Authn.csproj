@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Authn.Data\Authn.Data.csproj" />
     <ProjectReference Include="..\Authn.Services\Authn.Services.csproj" />
   </ItemGroup>
 

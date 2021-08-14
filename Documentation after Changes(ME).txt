@@ -27,6 +27,6 @@ To change for localDatabase following steps are taken:
 configure services section.) 
 
 
-----------------------------------Future Changes
-Data solution is extra so i am goin to remove it and adjust its AppUsers.cs since it is used by database. 
+----------------------------------Second Changes
+Data solution is extra so i remove it and adjust its AppUsers.cs since it is used by database. 
  

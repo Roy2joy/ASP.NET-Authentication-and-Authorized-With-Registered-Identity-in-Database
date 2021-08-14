@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Authn.Data
+namespace Authn.Services
 {
     public class AppUser
     {
@@ -23,7 +23,7 @@ namespace Authn.Data
         {
             get
             {
-                return Roles?.Split(',').ToList()??new List<string>();
+                return Roles?.Split(',').ToList() ?? new List<string>();
             }
         }
     }
